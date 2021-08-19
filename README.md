@@ -2,7 +2,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
  # MCplugin PluginTutorial
   PaperMC 플러그인 (기초)
  
@@ -11,4 +10,3 @@
      file_download
    </span>
   </a>
-</body>

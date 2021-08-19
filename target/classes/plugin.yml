@@ -1,0 +1,9 @@
+name: PluginTutorial
+version: '1.0'
+main: kr.kro.pincette.plugintutorial.PluginTutorial
+api-version: 1.17
+authors: [ Pincette ]
+description: Plugin Tutorial
+
+commands:
+  tutorial:

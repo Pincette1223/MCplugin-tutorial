@@ -2,10 +2,7 @@
   PaperMC 플러그인 (기초)
  
  <a href="https://github.com/Pincette1223/MCplugin-tutorial/releases/download/v1.0/PluginTutorial.jar"><span class="material-icons-outlined">
-   <button class="btn">Download</button>
- </a>
-  
-<style>
+   <button class="btn" style="
   .btn {
     background-color: DodgerBlue;
     border: none;
@@ -13,5 +10,6 @@
     padding: 12px 30px;
     cursor: pointer;
     font-size: 20px;
-  }  
-</style>
+  }">
+    Download</button>
+ </a>

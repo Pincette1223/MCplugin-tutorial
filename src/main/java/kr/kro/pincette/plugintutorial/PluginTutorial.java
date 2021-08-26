@@ -4,17 +4,19 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
-public final class PluginTutorial extends JavaPlugin {
+public final class PluginTutorial extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
@@ -31,6 +33,7 @@ public final class PluginTutorial extends JavaPlugin {
         if(command.getName().equals("tutorial")) {
             if(sender instanceof Player) {
                 sender.sendMessage("안녕하세요, "+ sender.getName() + "님!");
+                Bukkit.getPluginManager().registerEvents(this, this);
             }
             else if(sender instanceof ConsoleCommandSender) {
                 sender.sendMessage("안녕하세요!");
@@ -62,5 +65,12 @@ public final class PluginTutorial extends JavaPlugin {
            }
         }
         return null;
+    }
+
+    @EventHandler
+    public void death(@NotNull PlayerDeathEvent event) {
+        Player player = event.getEntity();
+
+        event.setDeathMessage(player.getName()+"님이 사망하셨습니다!");
     }
 }
